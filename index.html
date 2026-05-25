@@ -540,7 +540,7 @@ footer img { height: 26px; opacity: .4; filter: brightness(0) invert(1); }
   .cards-badge { display: none; }
   .hero-right {
     height: auto;
-    margin-top: 56px;
+    margin-top: 32px;
     display: flex;
     justify-content: center;
   }
@@ -561,7 +561,10 @@ footer img { height: 26px; opacity: .4; filter: brightness(0) invert(1); }
     max-width: 320px;
   }
   .hcard:nth-child(2),
-  .hcard:nth-child(3) { display: none; }
+  .hcard:nth-child(3) { display: block; }
+  .hcard:nth-child(1) { top: auto; left: auto; transform: none; position: relative; }
+  .hcard:nth-child(2) { top: auto; left: auto; transform: none; position: relative; margin-top: 16px; }
+  .hcard:nth-child(3) { top: auto; left: auto; transform: none; position: relative; margin-top: 16px; }
   .hero-logo { margin: 0 auto 24px; }
   .hero-eyebrow, .hero-actions, .hero-platforms { justify-content: center; }
   .hero-sub { margin: 0 auto 24px; text-align: center; }
