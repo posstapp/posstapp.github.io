@@ -164,7 +164,7 @@ img { max-width: 100%; display: block; }
   padding: 14px;
   box-shadow: var(--shadow-lg);
   opacity: 0;
-  transition: opacity 0.8s ease;
+  transition: opacity 1.4s ease;
 }
 .hcard.show { opacity: 1; }
 .hcard:nth-child(1) { top: 0; left: 0; transform: rotate(-2deg); }
@@ -179,39 +179,6 @@ img { max-width: 100%; display: block; }
 .hc-cap { font-size: 11px; color: var(--ink2); line-height: 1.5; margin-bottom: 7px; }
 .hc-tag { font-size: 10px; color: var(--blue); font-weight: 500; }
 .hc-badge { display: inline-flex; align-items: center; gap: 4px; margin-top: 8px; background: var(--green-lt); color: var(--green); font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 100px; }
-
-
-/* ─── LOGO TEXT ─── */
-.logo-text {
-  display: inline-flex; align-items: baseline; gap: 1px;
-  font-family: Georgia, serif;
-  line-height: 1;
-}
-.logo-posst {
-  font-family: Georgia, serif;
-  font-style: italic;
-  font-weight: 700;
-  font-size: 52px;
-  color: #1a44d4;
-  letter-spacing: -1px;
-}
-.logo-arrow {
-  font-size: 36px;
-  color: #1a44d4;
-  font-style: normal;
-  margin: 0 1px;
-  font-weight: 700;
-}
-.logo-app {
-  font-family: "DM Sans", sans-serif;
-  font-weight: 700;
-  font-size: 44px;
-  color: var(--ink);
-  letter-spacing: -1px;
-}
-.logo-text-sm .logo-posst { font-size: 26px; }
-.logo-text-sm .logo-arrow { font-size: 18px; }
-.logo-text-sm .logo-app  { font-size: 22px; }
 
 @keyframes fadeUp {
   to { opacity: 1; transform: translateY(0); }
@@ -527,22 +494,8 @@ footer img { height: 26px; opacity: .4; filter: brightness(0) invert(1); }
 @media (max-width: 900px) {
   .nav { padding: 0 20px; }
   .hero { padding: 100px 24px 70px; }
-  .hero-inner { grid-template-columns: 1fr; gap: 0; }
-  .hero-right {
-    height: auto;
-    margin-top: 24px;
-    display: flex;
-    justify-content: center;
-  }
-  .hcard {
-    position: relative !important;
-    top: auto !important; left: auto !important; bottom: auto !important;
-    transform: none !important;
-    width: 100%;
-    max-width: 320px;
-  }
-  .hcard:nth-child(2),
-  .hcard:nth-child(3) { display: none; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
   .hero-logo { margin: 0 auto 24px; }
   .hero-eyebrow, .hero-actions, .hero-platforms { justify-content: center; }
   .hero-sub { margin: 0 auto 24px; text-align: center; }
@@ -571,7 +524,7 @@ footer img { height: 26px; opacity: .4; filter: brightness(0) invert(1); }
 <!-- NAV -->
 <nav class="nav">
   <a class="nav-logo" href="#hero">
-    <img src="posst_logo_final.png" alt="posst.app">
+    <img src="Brand_Logo_for_App___Website.png" alt="posst.app">
   </a>
   <ul class="nav-links">
     <li><a href="#how">How it works</a></li>
@@ -588,7 +541,7 @@ footer img { height: 26px; opacity: .4; filter: brightness(0) invert(1); }
     <!-- LEFT: text -->
     <div class="hero-left">
       <div class="hero-logo">
-        <img src="posst_logo_final.png" alt="posst.app">
+        <img src="Brand_Logo_for_App___Website.png" alt="posst.app">
       </div>
       <div class="hero-eyebrow">
         <span class="live-dot"></span>
@@ -839,14 +792,14 @@ footer img { height: 26px; opacity: .4; filter: brightness(0) invert(1); }
 <script>
 // ─── HERO SOCIAL CARDS ───
 const cards = [
-  { biz:'The Daily Grind', time:'2 min ago', pl:'📸', av:'☕', avBg:'#fef3c7', img:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80', cap:'Start your morning right ☀️ Our specialty blends are waiting — come in and fuel your day.', tag:'#MorningCoffee #LocalCafe' },
-  { biz:'Spice Garden', time:'Just now', pl:'📘', av:'🍛', avBg:'#fee2e2', img:'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80', cap:"Tonight's special — slow-cooked lamb curry 🌶️ Book your table now.", tag:'#IndianFood #Melbourne' },
-  { biz:'Luxe Hair Studio', time:'5 min ago', pl:'📸', av:'✂️', avBg:'#f3e8ff', img:'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80', cap:'Friday feels — fresh cuts, happy clients ✂️ Book your weekend slot!', tag:'#HairSalon #MelbourneHair' },
-  { biz:'FitLife Gym', time:'1 hr ago', pl:'📘', av:'💪', avBg:'#dbeafe', img:'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=80', cap:"Monday motivation! 💪 Your goals don't care about your excuses.", tag:'#FitnessGoals #GymLife' },
-  { biz:'Bloom Florist', time:'3 hr ago', pl:'🗺️', av:'🌸', avBg:'#dcfce7', img:'https://images.unsplash.com/photo-1487530811015-780d4d4f11c6?w=400&q=80', cap:'New arrivals — seasonal blooms perfect for any occasion 🌺', tag:'#Flowers #Melbourne' },
-  { biz:'Clippers Barber', time:'30 min ago', pl:'📘', av:'💈', avBg:'#e0f2fe', img:'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=400&q=80', cap:'Fresh fade, fresh week. Walk-ins welcome all day 🎯', tag:'#Barbershop #FreshCut' },
-  { biz:'Zen Wellness', time:'4 hr ago', pl:'📸', av:'🧘', avBg:'#fef9c3', img:'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80', cap:'Your body carries everything — give it the care it deserves.', tag:'#Wellness #SelfCare' },
-  { biz:'Pho Bowl', time:'45 min ago', pl:'🗺️', av:'🍜', avBg:'#fff7ed', img:'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=400&q=80', cap:"Nothing a warm bowl of pho can't fix 🍜 Lunch special — $14.", tag:'#Vietnamese #Lunch' },
+  { biz:'The Daily Grind', time:'2 min ago', pl:'📸', av:'☕', avBg:'#fef3c7', imgBg:'#fef3c715', img:'☕', cap:'Start your morning right ☀️ Our specialty blends are waiting — come in and fuel your day.', tag:'#MorningCoffee #LocalCafe' },
+  { biz:'Spice Garden', time:'Just now', pl:'📘', av:'🍛', avBg:'#fee2e2', imgBg:'#fee2e215', img:'🍛', cap:"Tonight's special — slow-cooked lamb curry 🌶️ Book your table now.", tag:'#IndianFood #Melbourne' },
+  { biz:'Luxe Hair Studio', time:'5 min ago', pl:'📸', av:'✂️', avBg:'#f3e8ff', imgBg:'#f3e8ff15', img:'✂️', cap:'Friday feels — fresh cuts, happy clients ✂️ Book your weekend slot!', tag:'#HairSalon #MelbourneHair' },
+  { biz:'FitLife Gym', time:'1 hr ago', pl:'📘', av:'💪', avBg:'#dbeafe', imgBg:'#dbeafe15', img:'💪', cap:"Monday motivation! 💪 Your goals don't care about your excuses.", tag:'#FitnessGoals #GymLife' },
+  { biz:'Bloom Florist', time:'3 hr ago', pl:'🗺️', av:'🌸', avBg:'#dcfce7', imgBg:'#dcfce715', img:'🌸', cap:'New arrivals — seasonal blooms perfect for any occasion 🌺', tag:'#Flowers #Melbourne' },
+  { biz:'Clippers Barber', time:'30 min ago', pl:'📘', av:'💈', avBg:'#e0f2fe', imgBg:'#e0f2fe15', img:'💈', cap:'Fresh fade, fresh week. Walk-ins welcome all day 🎯', tag:'#Barbershop #FreshCut' },
+  { biz:'Zen Wellness', time:'4 hr ago', pl:'📸', av:'🧘', avBg:'#fef9c3', imgBg:'#fef9c315', img:'🧘', cap:'Your body carries everything — give it the care it deserves.', tag:'#Wellness #SelfCare' },
+  { biz:'Pho Bowl', time:'45 min ago', pl:'🗺️', av:'🍜', avBg:'#fff7ed', imgBg:'#fff7ed15', img:'🍜', cap:"Nothing a warm bowl of pho can't fix 🍜 Lunch special — $14.", tag:'#Vietnamese #Lunch' },
 ];
 
 function makeCard(c) {
@@ -855,9 +808,7 @@ function makeCard(c) {
     <div><div class="hc-biz">${c.biz}</div><div class="hc-time">${c.time}</div></div>
     <div class="hc-pl">${c.pl}</div>
   </div>
-  <div class="hc-img" style="background:#f3f4f6;overflow:hidden;padding:0">
-    <img src="${c.img}" alt="${c.biz}" style="width:100%;height:100%;object-fit:cover;border-radius:9px;display:block">
-  </div>
+  <div class="hc-img" style="background:${c.imgBg}">${c.img}</div>
   <div class="hc-cap">${c.cap}</div>
   <div class="hc-tag">${c.tag}</div>
   <div class="hc-badge">⚡ Auto-posted by posst.app</div>`;
@@ -872,7 +823,7 @@ function cycleCard(slotEl) {
     slotEl.innerHTML = makeCard(cards[idx % cards.length]);
     idx++;
     requestAnimationFrame(() => slotEl.classList.add('show'));
-  }, 400);
+  }, 700);
 }
 
 // Init — stagger initial appearance
@@ -884,7 +835,7 @@ slots.forEach((sl, i) => {
 
 // Rotate one card every 3.5s
 let rSlot = 0;
-setInterval(() => { cycleCard(slots[rSlot % slots.length]); rSlot++; }, 2200);
+setInterval(() => { cycleCard(slots[rSlot % slots.length]); rSlot++; }, 3500);
 
 // ─── GEO PRICING ───
 const geos = [
