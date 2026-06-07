@@ -956,7 +956,7 @@ function showPickerNew(places) {
   places.forEach(p => {
     const item = document.createElement('div');
     item.className = 'autocomplete-item';
-    const bname = p.displayName || '';
+    const bname = (typeof p.displayName === 'object' ? p.displayName?.text : p.displayName) || '';
     const addr = p.formattedAddress || '';
     item.innerHTML = '<div class="ac-name">' + bname + '</div><div class="ac-addr">' + addr + '</div>';
     item.addEventListener('mousedown', (e) => {
@@ -983,7 +983,7 @@ function renderScore(place, fallbackName) {
     (Math.min(rev / 100, 1) * 25) + ((rat / 5) * 30) +
     (Math.min(act / 100, 1) * 25) + ((cmp / 100) * 20)
   );
-  const bizName = place.displayName || place.name || fallbackName;
+  const bizName = (typeof place.displayName === 'object' ? place.displayName?.text : place.displayName) || place.name || fallbackName;
   const bizCity = document.getElementById('hero-biz-city').value.trim() || '';
   const bizType = document.getElementById('hero-biz-type').value.trim() || 'local business';
 
