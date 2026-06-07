@@ -927,8 +927,14 @@ async function _doAuditSearch(name) {
       maxResultCount: 5
     });
     if (!places?.length) { showErr('Business not found on Google. Try adding your city name.'); return; }
-    if (places.length === 1) { renderScore(places[0], name); }
-    else { showPickerNew(places); }
+    // Always show picker so user confirms the correct business
+    if (places.length === 1) {
+      const pname = (typeof places[0].displayName === 'object' ? places[0].displayName?.text : places[0].displayName) || '';
+      const typed = name.toLowerCase().trim();
+      const similarity = pname.toLowerCase().includes(typed.split(' ')[0]) || typed.includes(pname.toLowerCase().split(' ')[0]);
+      if (similarity) { renderScore(places[0], pname); }
+      else { showPickerNew(places); }
+    } else { showPickerNew(places); }
   } catch(e) { showErr('Could not connect to Google. Please try again.'); }
 }
 
