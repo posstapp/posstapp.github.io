@@ -926,9 +926,6 @@ async function _doAuditSearch(name) {
       fields: ['id','displayName','rating','userRatingCount','formattedAddress','regularOpeningHours','photos','websiteURI'],
       maxResultCount: 5
     });
-    console.log('[posst debug] query:', query);
-    console.log('[posst debug] places returned:', places.length);
-    places.forEach((p,i) => console.log('[posst debug] place', i, 'displayName:', JSON.stringify(p.displayName), 'address:', p.formattedAddress));
     if (!places?.length) { showErr('Business not found on Google. Try adding your city name.'); return; }
     // Always show picker so user confirms the correct business
     if (places.length === 1) {
