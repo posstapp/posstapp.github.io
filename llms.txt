@@ -1,0 +1,33 @@
+# posst.app
+
+> AI-powered social media posting for small businesses. Automated daily posts to Facebook and Instagram — zero effort from you.
+
+## What posst.app does
+
+posst.app is a fully automated social media posting service for small businesses. Three AI agents — a Social Agent, a Branding Agent, and a Scheduling Agent — work together to create and publish original social media posts to your Facebook Page and Instagram account every single day.
+
+Businesses sign up, connect their Facebook Page via a secure OAuth flow, and the AI agents take over. Captions are written in the business's own tone using its description, location, and a rotating daily content theme. Images are AI-generated (Standard plan) or pulled from the business's own Google Drive photos (Pro plan).
+
+## Plans and Pricing
+
+- Standard: A$24.99/month — AI-generated images and captions, daily posts to Facebook and Instagram.
+- Pro: A$34.99/month — Everything in Standard, plus your own photos from Google Drive and custom daily content themes.
+- 30-day free trial on both plans. No charge until Day 30.
+
+## Platforms supported
+
+- Facebook Pages
+- Instagram Business accounts
+- Google Business Profile — coming soon
+
+## Contact
+
+- Email: chief@posst.app
+- Phone: +61 414208895
+- Website: https://posst.app
+
+## Pages
+
+- Homepage: https://posst.app/
+- Privacy Policy: https://posst.app/privacy.html
+- Terms of Service: https://posst.app/terms.html
