@@ -1,33 +1,28 @@
 # posst.app
 
-> AI-powered social media posting for small businesses. Automated daily posts to Facebook and Instagram — zero effort from you.
+## About
+posst.app is an AI-powered social media posting service for small businesses in Australia. It automates daily posts to Facebook and Instagram with AI-generated images and captions.
 
-## What posst.app does
-
-posst.app is a fully automated social media posting service for small businesses. Three AI agents — a Social Agent, a Branding Agent, and a Scheduling Agent — work together to create and publish original social media posts to your Facebook Page and Instagram account every single day.
-
-Businesses sign up, connect their Facebook Page via a secure OAuth flow, and the AI agents take over. Captions are written in the business's own tone using its description, location, and a rotating daily content theme. Images are AI-generated (Standard plan) or pulled from the business's own Google Drive photos (Pro plan).
-
-## Plans and Pricing
-
-- Standard: A$24.99/month — AI-generated images and captions, daily posts to Facebook and Instagram.
-- Pro: A$34.99/month — Everything in Standard, plus your own photos from Google Drive and custom daily content themes.
-- 30-day free trial on both plans. No charge until Day 30.
-
-## Platforms supported
-
-- Facebook Pages
-- Instagram Business accounts
-- Google Business Profile — coming soon
-
-## Contact
-
-- Email: chief@posst.app
-- Phone: +61 414208895
-- Website: https://posst.app
+## URL
+https://posst.app
 
 ## Pages
+- Landing page: https://posst.app/
+- Privacy policy: https://posst.app/privacy
+- Terms of service: https://posst.app/terms
+- Blog: https://posst.app/blog/
 
-- Homepage: https://posst.app/
-- Privacy Policy: https://posst.app/privacy.html
-- Terms of Service: https://posst.app/terms.html
+## Blog Posts
+- Why Most Small Businesses Stop Posting on Social Media: https://posst.app/blog/why-small-businesses-stop-posting.html
+- How AI Is Changing Social Media for Small Businesses in Australia: https://posst.app/blog/ai-changing-social-media-australia.html
+- Facebook vs Instagram for Small Business: https://posst.app/blog/facebook-vs-instagram-small-business.html
+- 5 Signs Your Small Business Needs a Social Media Automation Tool: https://posst.app/blog/signs-need-social-media-automation.html
+- What Makes a Good Social Media Post - A Guide for Local Businesses: https://posst.app/blog/what-makes-good-social-media-post.html
+
+## Pricing
+- Standard: A$24.99/month
+- Pro: A$34.99/month
+- 30-day free trial on all plans
+
+## Contact
+- Email: hello@posst.app
