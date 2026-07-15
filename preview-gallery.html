@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>posst.app — Style Preview Gallery</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F8F7F4; color: #0F0E17; padding: 24px; }
+h1 { font-size: 28px; margin-bottom: 8px; }
+.subtitle { color: #6B6B7B; font-size: 14px; margin-bottom: 32px; }
+.group { margin-bottom: 40px; }
+.group-header { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+.group-meta { font-size: 12px; color: #6B6B7B; margin-bottom: 12px; }
+.grid { display: grid; grid-template-columns: repeat(9, 1fr); gap: 8px; }
+.card { border-radius: 8px; overflow: hidden; background: white; border: 1px solid #E8E8E8; }
+.card img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.card-label { font-size: 10px; font-weight: 600; text-align: center; padding: 4px; color: #0F0E17; }
+@media (max-width: 1200px) { .grid { grid-template-columns: repeat(5, 1fr); } }
+@media (max-width: 768px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+</style>
+</head>
+<body>
+<h1>Style Preview Gallery</h1>
+<div class="subtitle">29 categories × 9 styles = 261 images</div>
+<script>
+const R2 = 'https://pub-f5f1d08da66048808d14f48cb78ebb36.r2.dev/style_previews';
+const styles = ['photorealistic','soft_watercolour','studio_ghibli','minimalist_line_art','flat_illustration','oil_painting','pop_art','cinematic_noir','vintage_film'];
+const styleLabels = {'photorealistic':'Photorealistic','soft_watercolour':'Soft Watercolour','studio_ghibli':'Studio Ghibli','minimalist_line_art':'Minimalist Line Art','flat_illustration':'Flat Illustration','oil_painting':'Oil Painting','pop_art':'Pop Art','cinematic_noir':'Cinematic Noir','vintage_film':'Vintage Film'};
+const groups = [
+  {slug:'fitness_leisure', label:'Fitness & Leisure', comp:'golden_hour_action', types:14},
+  {slug:'pet_services', label:'Pet Services', comp:'golden_hour_action', types:12},
+  {slug:'automotive', label:'Automotive', comp:'golden_hour_action', types:12},
+  {slug:'education_childcare', label:'Education & Childcare', comp:'wide_environment', types:11},
+  {slug:'accommodation_tourism', label:'Accommodation & Tourism', comp:'wide_environment', types:10},
+  {slug:'online_ecommerce', label:'Online & eCommerce', comp:'abstract_workspace', types:8},
+  {slug:'events_entertainment', label:'Events & Entertainment', comp:'wide_environment', types:8},
+  {slug:'health_wellness', label:'Health & Wellness', comp:'wide_environment', types:7},
+  {slug:'spiritual_alternative', label:'Spiritual & Alternative', comp:'symbolic_scene', types:14},
+  {slug:'kids_family', label:'Kids & Family', comp:'wide_environment', types:5},
+  {slug:'food_drink_production', label:'Food & Drink Production', comp:'documentary_candid', types:5},
+  {slug:'trade_industrial', label:'Trade & Industrial', comp:'documentary_candid', types:5},
+  {slug:'food_bakery_sweets', label:'Bakery & Sweets', comp:'macro_detail', types:4, parent:'Food & Hospitality'},
+  {slug:'food_dining', label:'Dining & Cafes', comp:'wide_environment', types:4, parent:'Food & Hospitality'},
+  {slug:'food_street_casual', label:'Street Food & Takeaway', comp:'golden_hour_action', types:3, parent:'Food & Hospitality'},
+  {slug:'food_specialty', label:'Specialty Food & Catering', comp:'documentary_candid', types:6, parent:'Food & Hospitality'},
+  {slug:'beauty_salon', label:'Salon & Beauty', comp:'macro_detail', types:7, parent:'Beauty & Health'},
+  {slug:'beauty_clinical', label:'Clinical & Medical', comp:'wide_environment', types:5, parent:'Beauty & Health'},
+  {slug:'beauty_therapy', label:'Therapy & Allied Health', comp:'over_shoulder', types:10, parent:'Beauty & Health'},
+  {slug:'retail_fashion', label:'Fashion & Jewellery', comp:'high_contrast_studio', types:3, parent:'Retail'},
+  {slug:'retail_specialty', label:'Specialty Shops', comp:'macro_detail', types:5, parent:'Retail'},
+  {slug:'retail_tech', label:'Tech & Electronics', comp:'product_still', types:3, parent:'Retail'},
+  {slug:'retail_general', label:'General Retail', comp:'wide_environment', types:8, parent:'Retail'},
+  {slug:'home_trades', label:'Trades', comp:'over_shoulder', types:7, parent:'Home & Garden'},
+  {slug:'home_services', label:'Home Services', comp:'documentary_candid', types:4, parent:'Home & Garden'},
+  {slug:'home_improvement', label:'Home Improvement', comp:'outdoor_natural', types:7, parent:'Home & Garden'},
+  {slug:'professional_corporate', label:'Corporate & Professional', comp:'abstract_workspace', types:9, parent:'Professional Services'},
+  {slug:'professional_creative', label:'Creative Services', comp:'over_shoulder', types:8, parent:'Professional Services'},
+  {slug:'professional_specialist', label:'Specialist Services', comp:'wide_environment', types:4, parent:'Professional Services'},
+];
+groups.forEach(g => {
+  const div = document.createElement('div');
+  div.className = 'group';
+  const parentTag = g.parent ? ` <span style="color:#1648FF">← ${g.parent}</span>` : '';
+  div.innerHTML = `<div class="group-header">${g.label}${parentTag}</div>
+    <div class="group-meta">${g.types} business types · ${g.comp}</div>
+    <div class="grid">${styles.map(s =>
+      `<div class="card"><img src="${R2}/${g.slug}/${s}.jpg" alt="${g.label} ${styleLabels[s]}" loading="lazy"><div class="card-label">${styleLabels[s]}</div></div>`
+    ).join('')}</div>`;
+  document.body.appendChild(div);
+});
+</script>
+</body>
+</html>
