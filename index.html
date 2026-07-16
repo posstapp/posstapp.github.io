@@ -557,7 +557,7 @@ h2 em { font-style: italic; color: var(--blue); }
       "name": "Who writes the captions?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Your Social Agent writes every caption in your business tone — based on your business description, location, and the day's content theme. You never write or approve anything."
+        "text": "Your Caption Agent writes every caption in your business tone — based on your business description, location, and the day's content theme. You never write or approve anything."
       }
     },
     {
@@ -565,7 +565,23 @@ h2 em { font-style: italic; color: var(--blue); }
       "name": "Where do the images come from?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "On Standard, your Social Agent generates a fresh AI image for every post. On Pro, your Branding Agent also uses your own photos from Google Drive."
+        "text": "On Standard, your Social Agent generates a fresh AI image for every post in one of 3 image styles. On Pro, you get all 9 image styles plus the option to use your own photos from Google Drive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are image styles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every AI-generated image is created in a visual style — like Photorealistic, Soft Watercolour, Studio Ghibli, Pop Art, or Cinematic Noir. Standard includes Photorealistic plus 2 styles of your choice. Pro unlocks all 9. You can preview and select your styles from your account portal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I put my logo and contact info on posts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On Pro, yes. Your logo, business name, email, and phone number are added to every post image automatically. On Standard, your business name is included. You can upload your logo and set your contact details in your account portal."
       }
     },
     {
@@ -590,6 +606,14 @@ h2 em { font-style: italic; color: var(--blue); }
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Not yet — coming soon. Right now posst.app posts to Facebook and Instagram. Google Business Profile posting and review replies are on the way."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between Standard and Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard includes your Social Agent, Caption Agent, and Local SEO Agent — plus 3 image styles and your business name on every post. Pro adds all 9 image styles, full branding (logo, email, phone on posts), your own photos via Google Drive, and daily content themes."
       }
     },
     {
@@ -629,7 +653,7 @@ h2 em { font-style: italic; color: var(--blue); }
       "name": "Do you post to my accounts or your own?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yours. Your AI agents post on your behalf through a secure connection to your Facebook and Google accounts. Everything stays in your name."
+        "text": "Yours. Your AI agents post on your behalf through a secure connection to your Facebook account. Everything stays in your name."
       }
     },
     {
@@ -654,6 +678,14 @@ h2 em { font-style: italic; color: var(--blue); }
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "No problem. When Facebook asks which pages to share, select all of them — this keeps your connection working correctly. On the next screen, posst.app will ask you to pick the specific page for this business. If you ever need to reconnect, do the same thing — grant all pages, then choose the right one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I manage my account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Through your account portal. Log in with your phone number and OTP code. From there you can change your posting schedule, pick image styles, upload your logo (Pro), update contact branding (Pro), and manage your subscription."
       }
     }
   ]
@@ -958,14 +990,17 @@ h2 em { font-style: italic; color: var(--blue); }
       </div>
       <div class="faq-group-label" style="margin-top:32px">The product</div>
       <div class="faq-grid">
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Who writes the captions?<span class="faq-icon">+</span></button><div class="faq-a">Your Social Agent writes every caption in your business tone &mdash; based on your business description, location, and the day&apos;s content theme. You never write or approve anything.</div></div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Where do the images come from?<span class="faq-icon">+</span></button><div class="faq-a">On Standard, your Social Agent generates a fresh AI image for every post. On Pro, your Branding Agent also uses your own photos from Google Drive.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Who writes the captions?<span class="faq-icon">+</span></button><div class="faq-a">Your Caption Agent writes every caption in your business tone &mdash; based on your business description, location, and the day&apos;s content theme. You never write or approve anything.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Where do the images come from?<span class="faq-icon">+</span></button><div class="faq-a">On Standard, your Social Agent generates a fresh AI image for every post in one of 3 image styles. On Pro, you get all 9 image styles plus the option to use your own photos from Google Drive.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What are image styles?<span class="faq-icon">+</span></button><div class="faq-a">Every AI-generated image is created in a visual style &mdash; like Photorealistic, Soft Watercolour, Studio Ghibli, Pop Art, or Cinematic Noir. Standard includes Photorealistic plus 2 styles of your choice. Pro unlocks all 9. You can preview and select your styles from your account portal.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I put my logo and contact info on posts?<span class="faq-icon">+</span></button><div class="faq-a">On Pro, yes. Your logo, business name, email, and phone number are added to every post image automatically. On Standard, your business name is included. You can upload your logo and set your contact details in your account portal.</div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I choose when posts go out?<span class="faq-icon">+</span></button><div class="faq-a">Yes. During signup you pick your posting time and your Social Agent posts at exactly that time every day.</div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What platforms do you post to?<span class="faq-icon">+</span></button><div class="faq-a">Facebook and Instagram &mdash; both, simultaneously, every day.</div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you support Google Business Profile?<span class="faq-icon">+</span></button><div class="faq-a">Not yet &mdash; coming soon. Right now posst.app posts to Facebook and Instagram. Google Business Profile posting and review replies are on the way.</div></div>
       </div>
       <div class="faq-group-label" style="margin-top:32px">Pricing &amp; trial</div>
       <div class="faq-grid">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What&apos;s the difference between Standard and Pro?<span class="faq-icon">+</span></button><div class="faq-a">Standard includes your Social Agent, Caption Agent, and Local SEO Agent &mdash; plus 3 image styles and your business name on every post. Pro adds all 9 image styles, full branding (logo, email, phone on posts), your own photos via Google Drive, and daily content themes.</div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is the 30-day trial really free?<span class="faq-icon">+</span></button><div class="faq-a">Yes &mdash; free for 30 days. We save your card details at signup but nothing is charged until Day 30. Cancel any time before then and you pay nothing.</div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What happens after the trial?<span class="faq-icon">+</span></button><div class="faq-a">On Day 30 your saved card is automatically charged. We send reminder emails on Days 27, 28 and 29 so you&apos;re never surprised.</div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I upgrade from Standard to Pro during my trial?<span class="faq-icon">+</span></button><div class="faq-a">Yes &mdash; upgrade any time from your account portal. Your original trial start date stays the same, so you still get the full 30 days. No extra days are added when you upgrade.</div></div>
@@ -973,10 +1008,11 @@ h2 em { font-style: italic; color: var(--blue); }
       </div>
       <div class="faq-group-label" style="margin-top:32px">Your accounts &amp; data</div>
       <div class="faq-grid">
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you post to my accounts or your own?<span class="faq-icon">+</span></button><div class="faq-a">Yours. Your AI agents post on your behalf through a secure connection to your Facebook and Google accounts. Everything stays in your name.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you post to my accounts or your own?<span class="faq-icon">+</span></button><div class="faq-a">Yours. Your AI agents post on your behalf through a secure connection to your Facebook account. Everything stays in your name.</div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What happens to my posts if I cancel?<span class="faq-icon">+</span></button><div class="faq-a">They stay exactly where they are. Your Facebook posts and Instagram posts are yours permanently.</div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is my data secure?<span class="faq-icon">+</span></button><div class="faq-a">Yes. We use encrypted token storage, never store your passwords, and only request the minimum permissions needed to post on your behalf.</div></div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What if I manage multiple Facebook pages?<span class="faq-icon">+</span></button><div class="faq-a">No problem. When Facebook asks which pages to share, select <strong>all</strong> of them &mdash; this keeps your connection working correctly. On the next screen, posst.app will ask you to pick the specific page for this business. If you ever need to reconnect, do the same thing &mdash; grant all pages, then choose the right one.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I manage my account?<span class="faq-icon">+</span></button><div class="faq-a">Through your account portal. Log in with your phone number and OTP code. From there you can change your posting schedule, pick image styles, upload your logo (Pro), update contact branding (Pro), and manage your subscription.</div></div>
       </div>
     </div>
   </div>
