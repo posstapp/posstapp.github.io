@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GYL1PDDR1X"></script>
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-GYL1PDDR1X"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -32,7 +32,8 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"></noscript>
 <style>
 /* ─── TOKENS ─── */
 :root {
@@ -41,7 +42,7 @@
   --white:   #ffffff;
   --ink:     #1a1814;
   --ink2:    #3d3a35;
-  --muted:   #7a756d;
+  --muted:   #6b665e;
   --border:  #ddd8cf;
   --blue:    #1d4ed8;
   --blue-lt: #eff3ff;
@@ -730,7 +731,7 @@ h2 em { font-style: italic; color: var(--blue); }
 
 <nav class="nav">
   <a class="nav-logo" href="#hero">
-    <img src="posst_logo_final.png" alt="posst.app" onerror="this.src='posst_logo_dark.png'">
+    <img src="posst_logo_final.png" alt="posst.app" width="120" height="32" onerror="this.src='posst_logo_dark.png'">
   </a>
   <ul class="nav-links">
     <li><a href="#agents">What we do</a></li>
@@ -742,12 +743,13 @@ h2 em { font-style: italic; color: var(--blue); }
     <li><a href="https://onboarding.posst.app?mode=login" class="nav-account-btn">My Account</a></li>
   </ul>
 </nav>
+<main>
 
 <section class="hero" id="hero">
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-logo">
-        <img src="posst_logo_final.png" alt="posst.app" onerror="this.src='posst_logo_dark.png'">
+        <img src="posst_logo_final.png" alt="posst.app" width="120" height="32" onerror="this.src='posst_logo_dark.png'">
       </div>
       <div class="hero-eyebrow">
         <span class="live-dot"></span>
@@ -1026,8 +1028,9 @@ h2 em { font-style: italic; color: var(--blue); }
   </div>
 </section>
 
+</main>
 <footer>
-  <img src="posst_logo_white.png" alt="posst.app">
+  <img src="posst_logo_white.png" alt="posst.app" width="120" height="26">
   <ul class="footer-links">
     <li><a href="/blog/">Blog</a>
       <a href="https://posst.app/privacy">Privacy</a></li>
@@ -1378,7 +1381,7 @@ function makeFCard(c) {
   if (c.isReview) {
     return '<div class="fcard-head"><div class="fcard-av" style="background:' + c.avBg + '">' + c.av + '</div><div style="min-width:0;flex:1"><div class="fcard-biz">' + c.biz + '</div><div class="fcard-time">' + c.reviewer + '</div></div><div class="fcard-pl">' + c.pl + '</div></div><div style="background:#fef9c3;border-radius:7px;padding:7px;margin-bottom:5px;font-size:9px;color:#713f12">' + c.stars + '<br><em>' + c.cap + '</em></div><div class="fcard-badge" style="background:#f0fdf4;color:#15803d">⚡ ' + c.tag + '</div>';
   }
-  return '<div class="fcard-head"><div class="fcard-av" style="background:' + c.avBg + '">' + c.av + '</div><div style="min-width:0;flex:1"><div class="fcard-biz">' + c.biz + '</div><div class="fcard-time">Just now</div></div><div class="fcard-pl">' + c.pl + '</div></div><img class="fcard-img" src="' + c.img + '" alt="' + c.biz + '" onerror="this.style.display=\'none\'"><div class="fcard-cap">' + c.cap + '</div><div class="fcard-tag">' + c.tag + '</div><div class="fcard-badge">⚡ Auto-posted</div>';
+  return '<div class="fcard-head"><div class="fcard-av" style="background:' + c.avBg + '">' + c.av + '</div><div style="min-width:0;flex:1"><div class="fcard-biz">' + c.biz + '</div><div class="fcard-time">Just now</div></div><div class="fcard-pl">' + c.pl + '</div></div><img class="fcard-img" loading="lazy" src="' + c.img + '" alt="' + c.biz + '" onerror="this.style.display=\'none\'"><div class="fcard-cap">' + c.cap + '</div><div class="fcard-tag">' + c.tag + '</div><div class="fcard-badge">⚡ Auto-posted</div>';
 }
 
 const slotPositions = [
