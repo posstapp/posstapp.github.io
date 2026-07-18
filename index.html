@@ -30,6 +30,7 @@
 <meta name="twitter:description" content="AI-powered social media posting for small businesses. Automated daily posts to Facebook and Instagram.">
 <meta name="twitter:image" content="https://posst.app/posst_logo_final.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" as="image" href="C1.webp" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -42,9 +43,9 @@
   --white:   #ffffff;
   --ink:     #1a1814;
   --ink2:    #3d3a35;
-  --muted:   #6b665e;
+  --muted:   #595550;
   --border:  #ddd8cf;
-  --blue:    #1d4ed8;
+  --blue:    #1e40af;
   --blue-lt: #eff3ff;
   --green:   #15803d;
   --green-lt:#f0fdf4;
@@ -731,7 +732,7 @@ h2 em { font-style: italic; color: var(--blue); }
 
 <nav class="nav">
   <a class="nav-logo" href="#hero">
-    <img src="logo.webp" alt="posst.app" width="350" height="56" fetchpriority="high" onerror="this.src='posst_logo_final.png'">
+    <img src="logo.webp" alt="posst.app" fetchpriority="high" onerror="this.src='posst_logo_final.png'">
   </a>
   <ul class="nav-links">
     <li><a href="#agents">What we do</a></li>
@@ -749,7 +750,7 @@ h2 em { font-style: italic; color: var(--blue); }
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-logo">
-        <img src="logo.webp" alt="posst.app" width="120" height="19" onerror="this.src='posst_logo_final.png'">
+        <img src="logo.webp" alt="posst.app" onerror="this.src='posst_logo_final.png'">
       </div>
       <div class="hero-eyebrow">
         <span class="live-dot"></span>
@@ -1030,7 +1031,7 @@ h2 em { font-style: italic; color: var(--blue); }
 
 </main>
 <footer>
-  <img src="posst_logo_white.png" alt="posst.app" width="120" height="19">
+  <img src="posst_logo_white.png" alt="posst.app">
   <ul class="footer-links">
     <li><a href="/blog/">Blog</a>
       <a href="https://posst.app/privacy">Privacy</a></li>
@@ -1381,7 +1382,7 @@ function makeFCard(c) {
   if (c.isReview) {
     return '<div class="fcard-head"><div class="fcard-av" style="background:' + c.avBg + '">' + c.av + '</div><div style="min-width:0;flex:1"><div class="fcard-biz">' + c.biz + '</div><div class="fcard-time">' + c.reviewer + '</div></div><div class="fcard-pl">' + c.pl + '</div></div><div style="background:#fef9c3;border-radius:7px;padding:7px;margin-bottom:5px;font-size:9px;color:#713f12">' + c.stars + '<br><em>' + c.cap + '</em></div><div class="fcard-badge" style="background:#f0fdf4;color:#15803d">⚡ ' + c.tag + '</div>';
   }
-  return '<div class="fcard-head"><div class="fcard-av" style="background:' + c.avBg + '">' + c.av + '</div><div style="min-width:0;flex:1"><div class="fcard-biz">' + c.biz + '</div><div class="fcard-time">Just now</div></div><div class="fcard-pl">' + c.pl + '</div></div><img class="fcard-img" loading="lazy" src="' + c.img + '" alt="' + c.biz + '" onerror="this.style.display=\'none\'"><div class="fcard-cap">' + c.cap + '</div><div class="fcard-tag">' + c.tag + '</div><div class="fcard-badge">⚡ Auto-posted</div>';
+  return '<div class="fcard-head"><div class="fcard-av" style="background:' + c.avBg + '">' + c.av + '</div><div style="min-width:0;flex:1"><div class="fcard-biz">' + c.biz + '</div><div class="fcard-time">Just now</div></div><div class="fcard-pl">' + c.pl + '</div></div><img class="fcard-img" src="' + c.img + '" alt="' + c.biz + '" onerror="this.style.display=\'none\'"><div class="fcard-cap">' + c.cap + '</div><div class="fcard-tag">' + c.tag + '</div><div class="fcard-badge">⚡ Auto-posted</div>';
 }
 
 const slotPositions = [
@@ -1446,7 +1447,7 @@ geos.forEach(g => {
   };
   geoList.appendChild(el);
 });
-fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
+(window.requestIdleCallback||setTimeout)(function(){fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
   const g = geos.find(x => x.code === d.country_code);
   if (g) { document.getElementById('std-amt').textContent = g.std; document.getElementById('pro-amt').textContent = g.pro; }
 }).catch(()=>{});
