@@ -288,7 +288,7 @@ img { max-width: 100%; display: block; }
 .fcard-biz { font-size: 10px; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .fcard-time { font-size: 8px; color: var(--muted); }
 .fcard-pl { font-size: 11px; margin-left: auto; flex-shrink: 0; }
-.fcard-img { width: 100%; height: 70px; border-radius: 7px; object-fit: cover; margin-bottom: 6px; display: block; background: var(--cream2); }
+.fcard-img { width: 100%; height: 70px; aspect-ratio: 242/127; border-radius: 7px; object-fit: cover; margin-bottom: 6px; display: block; background: var(--cream2); }
 .fcard-cap { font-size: 9px; color: var(--ink2); line-height: 1.5; margin-bottom: 4px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
 .fcard-tag { font-size: 8px; color: var(--blue); font-weight: 500; }
 .fcard-badge { display: inline-flex; align-items: center; gap: 3px; margin-top: 5px; background: var(--green-lt); color: var(--green); font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 100px; }
@@ -780,7 +780,7 @@ h2 em { font-style: italic; color: var(--blue); }
       </div>
       <div class="hero-audit-widget" style="position:relative;z-index:2;">
         <div class="hero-audit-label">&#128269; Free Local Presence Check</div>
-        <h3>How strong is your business&apos;s online presence?</h3>
+        <h2 style="font-size:inherit">How strong is your business&apos;s online presence?</h2>
         <p>Type your business name and see your real local presence score &mdash; reviews, rating, activity. Free, no signup needed.</p>
 
         <div class="autocomplete-wrap" style="margin-bottom:10px">
@@ -1366,9 +1366,9 @@ function goToOnboarding(e) {
 
 // ── FLOATING SOCIAL CARDS ──
 const floatCards = [
-  { biz:"Spice Garden",     pl:"📘", av:"🍛", avBg:"#fee2e2", img:"C1.png", cap:"Tonight's special — slow-cooked lamb curry 🌶️ Book your table now.", tag:"#IndianFood #Melbourne" },
-  { biz:"FitLife Gym",      pl:"📘", av:"💪", avBg:"#dbeafe", img:"C2.png", cap:"Monday motivation! 💪 Push harder. See you on the floor.", tag:"#FitnessGoals #GymLife" },
-  { biz:"Luxe Barber",      pl:"📸", av:"✂️", avBg:"#e0f2fe", img:"C3.png", cap:"Fresh fade, fresh week. Walk-ins welcome all day 🎯", tag:"#Barbershop #FreshCut" },
+  { biz:"Spice Garden",     pl:"📘", av:"🍛", avBg:"#fee2e2", img:"C1.webp", cap:"Tonight's special — slow-cooked lamb curry 🌶️ Book your table now.", tag:"#IndianFood #Melbourne" },
+  { biz:"FitLife Gym",      pl:"📘", av:"💪", avBg:"#dbeafe", img:"C2.webp", cap:"Monday motivation! 💪 Push harder. See you on the floor.", tag:"#FitnessGoals #GymLife" },
+  { biz:"Luxe Barber",      pl:"📸", av:"✂️", avBg:"#e0f2fe", img:"C3.webp", cap:"Fresh fade, fresh week. Walk-ins welcome all day 🎯", tag:"#Barbershop #FreshCut" },
   { biz:"The Daily Grind",  pl:"📸", av:"☕", avBg:"#fef3c7", img:"C4.png", cap:"Start your morning right ☀️ Specialty blends waiting.", tag:"#MorningCoffee #LocalCafe" },
   { biz:"Luxe Hair Studio", pl:"📸", av:"💆", avBg:"#f3e8ff", img:"C5.png", cap:"Fresh cuts, happy clients ✂️ Book your weekend slot!", tag:"#HairSalon #MelbourneHair" },
   { biz:"Zen Wellness",     pl:"📘", av:"🕯️", avBg:"#fef9c3", img:"C6.png", cap:"Your body carries everything — give it the care it deserves 🌿", tag:"#Wellness #SelfCare" },
