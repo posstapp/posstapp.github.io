@@ -1447,7 +1447,7 @@ geos.forEach(g => {
   };
   geoList.appendChild(el);
 });
-(window.requestIdleCallback||setTimeout)(function(){fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
+fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
   const g = geos.find(x => x.code === d.country_code);
   if (g) { document.getElementById('std-amt').textContent = g.std; document.getElementById('pro-amt').textContent = g.pro; }
 }).catch(()=>{});
