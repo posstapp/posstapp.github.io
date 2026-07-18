@@ -401,9 +401,9 @@ footer {
 }
 footer img { height: 26px; opacity: .4; filter: brightness(0) invert(1); }
 .footer-links { display: flex; gap: 22px; list-style: none; }
-.footer-links a { font-size: 13px; color: rgba(255,255,255,.4); transition: color .2s; }
-.footer-links a:hover { color: rgba(255,255,255,.7); }
-.footer-copy { font-size: 12px; color: rgba(255,255,255,.3); }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,.55); transition: color .2s; }
+.footer-links a:hover { color: rgba(255,255,255,.8); }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,.55); }
 .modal-bg { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 500; align-items: center; justify-content: center; }
 .modal-bg.open { display: flex; }
 .modal { background: var(--white); border-radius: 20px; padding: 32px; max-width: 440px; width: 92%; max-height: 80vh; overflow-y: auto; }
@@ -769,13 +769,13 @@ h2 em { font-style: italic; color: var(--blue); }
         <span>Posts to</span>
         <div class="plat-badge">&#128216; Facebook</div>
         <div class="plat-badge">&#128248; Instagram</div>
-        <div class="plat-badge" style="opacity:0.6;border-style:dashed">&#128506; Google Business &mdash; Coming Soon</div>
+        <div class="plat-badge" style="border-style:dashed;color:var(--muted);background:var(--cream2)">&#128506; Google Business &mdash; Coming Soon</div>
       </div>
     </div>
 
     <div class="hero-right" id="audit-widget" style="position:relative;">
       <div class="float-cards-wrap" id="float-cards-wrap">
-        <div class="fcard" id="fc0"></div>
+        <div class="fcard show" id="fc0" style="left:0px;top:15%;transform:rotate(-3deg)"><div class="fcard-head"><div class="fcard-av" style="background:#fee2e2">🍛</div><div style="min-width:0;flex:1"><div class="fcard-biz">Spice Garden</div><div class="fcard-time">Just now</div></div><div class="fcard-pl">📘</div></div><img class="fcard-img" src="C1.webp" alt="Spice Garden" width="242" height="127" onerror="this.style.display='none'"><div class="fcard-cap">Tonight's special — slow-cooked lamb curry 🌶️ Book your table now.</div><div class="fcard-tag">#IndianFood #Melbourne</div><div class="fcard-badge">⚡ Auto-posted</div></div>
         <div class="fcard" id="fc1"></div>
         <div class="fcard" id="fc2"></div>
       </div>
@@ -1391,7 +1391,7 @@ const slotPositions = [
   { left: '0px',   top: '58%',  rot: -2 },
 ];
 
-let fcIdx = 0;
+let fcIdx = 1;
 const fcEls = [0,1,2].map(i => document.getElementById('fc'+i)).filter(Boolean);
 
 function applyPos(el, slot) {
@@ -1408,7 +1408,7 @@ function initFCard(el, slotIdx) {
   setTimeout(() => el.classList.add('show'), 800 + slotIdx * 600);
 }
 
-fcEls.forEach((el, i) => initFCard(el, i));
+fcEls.forEach((el, i) => { if (i === 0) return; initFCard(el, i); });
 
 let fcRotate = 0;
 setInterval(() => {
