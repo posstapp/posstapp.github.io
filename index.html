@@ -30,7 +30,7 @@
 <meta name="twitter:description" content="AI-powered social media posting for small businesses. Automated daily posts to Facebook and Instagram.">
 <meta name="twitter:image" content="https://posst.app/posst_logo_final.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preload" as="image" href="C1.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="posst_logo_final.png" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -732,7 +732,7 @@ h2 em { font-style: italic; color: var(--blue); }
 
 <nav class="nav">
   <a class="nav-logo" href="#hero">
-    <img src="posst_logo_final.png" alt="posst.app" onerror="this.src='posst_logo_dark.png'">
+    <img src="posst_logo_final.png" alt="posst.app" width="400" height="107" onerror="this.src='posst_logo_dark.png'">
   </a>
   <ul class="nav-links">
     <li><a href="#agents">What we do</a></li>
@@ -750,7 +750,7 @@ h2 em { font-style: italic; color: var(--blue); }
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-logo">
-        <img src="posst_logo_final.png" alt="posst.app" onerror="this.src='posst_logo_dark.png'">
+        <img src="posst_logo_final.png" alt="posst.app" width="400" height="107" fetchpriority="high" onerror="this.src='posst_logo_dark.png'">
       </div>
       <div class="hero-eyebrow">
         <span class="live-dot"></span>
@@ -775,7 +775,7 @@ h2 em { font-style: italic; color: var(--blue); }
 
     <div class="hero-right" id="audit-widget" style="position:relative;">
       <div class="float-cards-wrap" id="float-cards-wrap">
-        <div class="fcard show" id="fc0" style="left:0px;top:15%;transform:rotate(-3deg)"><div class="fcard-head"><div class="fcard-av" style="background:#fee2e2">🍛</div><div style="min-width:0;flex:1"><div class="fcard-biz">Spice Garden</div><div class="fcard-time">Just now</div></div><div class="fcard-pl">📘</div></div><img class="fcard-img" src="C1.webp" alt="Spice Garden" width="242" height="127" onerror="this.style.display='none'"><div class="fcard-cap">Tonight's special — slow-cooked lamb curry 🌶️ Book your table now.</div><div class="fcard-tag">#IndianFood #Melbourne</div><div class="fcard-badge">⚡ Auto-posted</div></div>
+        <div class="fcard" id="fc0"></div><div style="min-width:0;flex:1"><div class="fcard-biz">Spice Garden</div><div class="fcard-time">Just now</div></div><div class="fcard-pl">📘</div></div><img class="fcard-img" src="C1.webp" alt="Spice Garden" width="242" height="127" onerror="this.style.display='none'"><div class="fcard-cap">Tonight's special — slow-cooked lamb curry 🌶️ Book your table now.</div><div class="fcard-tag">#IndianFood #Melbourne</div><div class="fcard-badge">⚡ Auto-posted</div></div>
         <div class="fcard" id="fc1"></div>
         <div class="fcard" id="fc2"></div>
       </div>
@@ -1031,7 +1031,7 @@ h2 em { font-style: italic; color: var(--blue); }
 
 </main>
 <footer>
-  <img src="posst_logo_white.png" alt="posst.app">
+  <img src="posst_logo_white.png" alt="posst.app" width="400" height="107">
   <ul class="footer-links">
     <li><a href="/blog/">Blog</a>
       <a href="https://posst.app/privacy">Privacy</a></li>
@@ -1391,7 +1391,7 @@ const slotPositions = [
   { left: '0px',   top: '58%',  rot: -2 },
 ];
 
-let fcIdx = 1;
+let fcIdx = 0;
 const fcEls = [0,1,2].map(i => document.getElementById('fc'+i)).filter(Boolean);
 
 function applyPos(el, slot) {
@@ -1408,7 +1408,7 @@ function initFCard(el, slotIdx) {
   setTimeout(() => el.classList.add('show'), 800 + slotIdx * 600);
 }
 
-fcEls.forEach((el, i) => { if (i === 0) return; initFCard(el, i); });
+fcEls.forEach((el, i) => initFCard(el, i));
 
 let fcRotate = 0;
 setInterval(() => {
