@@ -687,7 +687,7 @@ h2 em { font-style: italic; color: var(--blue); }
       "name": "What if I manage multiple Facebook pages?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No problem. When Facebook asks which pages to share, select all of them — this keeps your connection working correctly. On the next screen, posst.app will ask you to pick the specific page for this business. If you ever need to reconnect, do the same thing — grant all pages, then choose the right one."
+        "text": "No problem. When Facebook asks which pages to share, select all of them — this is a technical requirement. Meta’s OAuth system may not correctly issue page-specific access tokens when individual pages are selected, which can cause your connection to fail. posst.app only accesses and posts to the specific page you choose during onboarding, regardless of which pages are shared during the Facebook connection step. On the next screen, posst.app will ask you to pick the specific page for this business. If you ever need to reconnect, do the same thing — grant all pages, then choose the right one."
       }
     },
     {
