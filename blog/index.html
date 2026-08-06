@@ -128,5 +128,79 @@
   <p>&copy; 2026 posst.app. All rights reserved.</p>
 </footer>
 
+
+<!-- Cookie Consent Banner -->
+<style>
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1a1a2e;
+    color: #e0e0e0;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    z-index: 9999;
+    box-shadow: 0 -2px 16px rgba(0,0,0,0.3);
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .cookie-banner.hidden { display: none; }
+  .cookie-banner p { margin: 0; flex: 1; min-width: 250px; }
+  .cookie-banner a { color: #7c83ff; text-decoration: underline; }
+  .cookie-banner a:hover { color: #9fa4ff; }
+  .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
+  .cookie-btns button {
+    padding: 8px 20px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .cookie-btns button:hover { opacity: 0.85; }
+  .cookie-btn-decline {
+    background: transparent;
+    color: #e0e0e0;
+    border: 1px solid #555 !important;
+  }
+  .cookie-btn-accept {
+    background: #7c83ff;
+    color: #fff;
+  }
+  @media (max-width: 600px) {
+    .cookie-banner {
+      flex-direction: column;
+      text-align: center;
+      padding: 14px 16px;
+    }
+    .cookie-btns { width: 100%; justify-content: center; }
+  }
+</style>
+<div class="cookie-banner" id="cookieBanner">
+  <p>We use essential cookies to keep the site running and analytics cookies via Cloudflare to understand how visitors use posst.app. By continuing you agree to our <a href="/privacy.html">Privacy Policy</a>.</p>
+  <div class="cookie-btns">
+    <button class="cookie-btn-decline" onclick="cookieConsent('decline')">Decline</button>
+    <button class="cookie-btn-accept" onclick="cookieConsent('accept')">Accept</button>
+  </div>
+</div>
+<script>
+  (function() {
+    var consent = localStorage.getItem('posst_cookie_consent');
+    if (consent) document.getElementById('cookieBanner').classList.add('hidden');
+  })();
+  function cookieConsent(choice) {
+    localStorage.setItem('posst_cookie_consent', choice);
+    document.getElementById('cookieBanner').classList.add('hidden');
+  }
+</script>
+<!-- End Cookie Consent Banner -->
+
 </body>
 </html>
