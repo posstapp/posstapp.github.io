@@ -506,21 +506,108 @@ h2 em { font-style: italic; color: var(--blue); }
 </style>
 </head>
 <body>
-
-<nav class="nav">
-  <a class="nav-logo" href="/">
-    <img src="posst_logo_final.png" alt="posst.app" onerror="this.src='posst_logo_dark.png'">
-  </a>
-  <ul class="nav-links">
-    <li><a href="/#agents">What we do</a></li>
-    <li><a href="/#how">How it works</a></li>
-    <li><a href="/#pricing">Pricing</a></li>
-    <li><a href="mailto:chief@posst.app">Contact</a></li>
-    <li><a href="/blog/">Blog</a></li>
-        <li><a href="/#faqs">FAQs</a></li>
-    <li><a href="https://onboarding.posst.app?mode=login" class="nav-account-btn">My Account</a></li>
-  </ul>
-</nav>
+<!-- posst.app site header (self-contained) -->
+<style>
+  .posst-site-header {
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .posst-site-header .posst-hdr-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .posst-site-header .posst-hdr-logo img {
+    height: 40px;
+    width: auto;
+  }
+  .posst-site-header .posst-hdr-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .posst-site-header .posst-hdr-nav li { margin: 0; }
+  .posst-site-header .posst-hdr-nav a {
+    text-decoration: none;
+    color: #374151;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  .posst-site-header .posst-hdr-nav a:hover { color: #4f56ff; }
+  .posst-site-header .posst-hdr-cta {
+    background: #4f56ff;
+    color: #fff !important;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .posst-site-header .posst-hdr-cta:hover {
+    background: #3b41d9;
+    color: #fff !important;
+  }
+  .posst-site-header .posst-hdr-burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .posst-site-header .posst-hdr-burger svg {
+    width: 28px;
+    height: 28px;
+    stroke: #374151;
+  }
+  @media (max-width: 768px) {
+    .posst-site-header .posst-hdr-nav {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: #fff;
+      flex-direction: column;
+      padding: 16px 24px;
+      gap: 16px;
+      border-bottom: 1px solid #e5e7eb;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .posst-site-header .posst-hdr-nav.open { display: flex; }
+    .posst-site-header .posst-hdr-burger { display: block; }
+  }
+</style>
+<header class="posst-site-header">
+  <div class="posst-hdr-inner">
+    <a href="https://posst.app/" class="posst-hdr-logo">
+      <img src="https://posst.app/posst_logo_final.png" alt="posst.app" />
+    </a>
+    <button class="posst-hdr-burger" onclick="document.querySelector('.posst-hdr-nav').classList.toggle('open')" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="posst-hdr-nav">
+      <li><a href="https://posst.app/#agents">What we do</a></li>
+      <li><a href="https://posst.app/#how">How it works</a></li>
+      <li><a href="https://posst.app/#pricing">Pricing</a></li>
+      <li><a href="mailto:hello@posst.app">Contact</a></li>
+      <li><a href="https://posst.app/blog/">Blog</a></li>
+      <li><a href="https://posst.app/#faqs">FAQs</a></li>
+      <li><a href="https://onboarding.posst.app?mode=login" class="posst-hdr-cta">My Account</a></li>
+    </ul>
+  </div>
+</header>
+<!-- end posst.app site header -->
 
 <nav class="nav">
   <a class="nav-logo" href="/">
@@ -641,7 +728,6 @@ h2 em { font-style: italic; color: var(--blue); }
   </div>
   <p>&copy; 2026 posst.app. All rights reserved.</p>
 </footer>
-
 
 <!-- Cookie Consent Banner -->
 <style>
