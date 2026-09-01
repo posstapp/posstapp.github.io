@@ -497,7 +497,7 @@ h2 em { font-style: italic; color: var(--blue); }
   .exp-reviews-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
-  .nav-links li:nth-child(1), .nav-links li:nth-child(2), .nav-links li:nth-child(3), .nav-links li:nth-child(4) { display: none; }
+  .nav-links li:nth-child(2), .nav-links li:nth-child(3), .nav-links li:nth-child(4), .nav-links li:nth-child(5) { display: none; }
   .hero-actions { flex-direction: column; align-items: center; }
   .audit-row { flex-direction: column; }
 }
@@ -772,6 +772,7 @@ h2 em { font-style: italic; color: var(--blue); }
     <img src="posst_logo_final.png" alt="posst.app" onerror="this.src='posst_logo_dark.png'">
   </a>
   <ul class="nav-links">
+    <li><a href="#experience">See examples</a></li>
     <li><a href="#agents">What we do</a></li>
     <li><a href="#how">How it works</a></li>
     <li><a href="#pricing">Pricing</a></li>
@@ -887,6 +888,73 @@ h2 em { font-style: italic; color: var(--blue); }
   </div>
 </div>
 
+
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">See it for yourself</div>
+    <h2>See what posst.app <em>creates.</em></h2>
+    <p class="section-desc">Browse real examples by industry &mdash; the exact styles, cards and review replies your business would get.</p>
+
+    <div class="exp-tabs fade-in">
+      <button class="exp-tab active" data-tab="gallery" onclick="expSwitchTab('gallery')" type="button">Style gallery</button>
+      <button class="exp-tab" data-tab="reviews" onclick="expSwitchTab('reviews')" type="button">Review replies</button>
+    </div>
+
+    <div id="exp-panel-gallery" class="exp-panel">
+      <div class="exp-select-row fade-in">
+        <label class="exp-select-label" for="exp-category">Choose your industry</label>
+        <select id="exp-category" class="exp-select" onchange="expRenderGallery(this.value)"></select>
+      </div>
+
+      <div class="exp-grid fade-in" id="exp-grid"></div>
+      <div class="exp-cards-row fade-in" id="exp-cards"></div>
+
+      <p class="exp-tier-note">Standard includes Photorealistic + 2 styles. Pro unlocks all 9.</p>
+      <div style="text-align:center;margin-top:28px">
+        <a href="https://onboarding.posst.app/" class="btn btn-primary" style="display:inline-flex">Start free &mdash; 30 days &rarr;</a>
+      </div>
+    </div>
+
+    <div id="exp-panel-reviews" class="exp-panel" style="display:none">
+      <div class="exp-reviews-grid">
+        <div class="exp-review-card fade-in">
+          <div class="exp-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="exp-review-text">&ldquo;Took my golden retriever Max in for a full groom and he came out looking amazing! The staff were so gentle with him and he wasn&rsquo;t stressed at all. Highly recommend!&rdquo;</p>
+          <div class="exp-review-reply">
+            <div class="exp-review-reply-badge">&#10024; AI reply by posst.app</div>
+            Thank you so much for the kind words! We&rsquo;re thrilled Max had a stress-free visit and left looking his best. He&rsquo;s welcome back anytime &mdash; see you both again soon!
+          </div>
+        </div>
+        <div class="exp-review-card fade-in">
+          <div class="exp-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="exp-review-text">&ldquo;Best grooming experience we&rsquo;ve ever had! They did exactly the cut we asked for and even trimmed his nails without any fuss. Our dog actually seemed happy to be there!&rdquo;</p>
+          <div class="exp-review-reply">
+            <div class="exp-review-reply-badge">&#10024; AI reply by posst.app</div>
+            This made our day! We love when dogs feel right at home with us. Thanks for trusting us with your pup&rsquo;s grooming &mdash; we can&rsquo;t wait to see him again next time!
+          </div>
+        </div>
+        <div class="exp-review-card fade-in">
+          <div class="exp-review-stars">&#9733;&#9733;&#9733;&#9733;<span style="color:var(--border)">&#9733;</span></div>
+          <p class="exp-review-text">&ldquo;Good service overall and my dog looked great afterwards. Only downside was we had to wait about 20 minutes past our appointment time. Would still come back.&rdquo;</p>
+          <div class="exp-review-reply">
+            <div class="exp-review-reply-badge">&#10024; AI reply by posst.app</div>
+            Thank you for the feedback &mdash; we&rsquo;re really glad your dog left looking great! We&rsquo;re sorry about the wait and are working on tightening up our scheduling so appointments run on time. We appreciate you sticking with us.
+          </div>
+        </div>
+        <div class="exp-review-card fade-in">
+          <div class="exp-review-stars">&#9733;<span style="color:var(--border)">&#9733;&#9733;&#9733;&#9733;</span></div>
+          <p class="exp-review-text">&ldquo;Disappointed with our last visit. The cut wasn&rsquo;t what we asked for and no one called to explain the delay in pickup. Expected better.&rdquo;</p>
+          <div class="exp-review-reply">
+            <div class="exp-review-reply-badge">&#10024; AI reply by posst.app</div>
+            We&rsquo;re really sorry to hear this &mdash; this isn&rsquo;t the experience we want for you or your dog. We&rsquo;d like to make it right. Please give us a call or drop by so we can fix the cut and address the pickup delay directly. Thank you for letting us know.
+          </div>
+        </div>
+      </div>
+      <p class="exp-tier-note">Every Google review gets a professional reply &mdash; automatically. <span class="exp-pro-badge">Pro</span></p>
+    </div>
+  </div>
+</section>
+
 <section id="agents">
   <div class="agents-inner">
     <div class="section-label">Your AI Team</div>
@@ -964,72 +1032,6 @@ h2 em { font-style: italic; color: var(--blue); }
         <div class="trust-card"><div class="trust-icon">&#128205;</div><div><h3>Hyper-local content, built in</h3><p>Every caption is written with your suburb, your service, your tone &mdash; on every plan, automatically.</p></div></div>
         <div class="trust-card"><div class="trust-icon">&#128682;</div><div><h3>Cancel anytime &mdash; nothing disappears</h3><p>Your accounts stay yours forever. Cancel and everything you&apos;ve built remains intact.</p></div></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="section-inner">
-    <div class="section-label">See it for yourself</div>
-    <h2>See what posst.app <em>creates.</em></h2>
-    <p class="section-desc">Browse real examples by industry &mdash; the exact styles, cards and review replies your business would get.</p>
-
-    <div class="exp-tabs fade-in">
-      <button class="exp-tab active" data-tab="gallery" onclick="expSwitchTab('gallery')" type="button">Style gallery</button>
-      <button class="exp-tab" data-tab="reviews" onclick="expSwitchTab('reviews')" type="button">Review replies</button>
-    </div>
-
-    <div id="exp-panel-gallery" class="exp-panel">
-      <div class="exp-select-row fade-in">
-        <label class="exp-select-label" for="exp-category">Choose your industry</label>
-        <select id="exp-category" class="exp-select" onchange="expRenderGallery(this.value)"></select>
-      </div>
-
-      <div class="exp-grid fade-in" id="exp-grid"></div>
-      <div class="exp-cards-row fade-in" id="exp-cards"></div>
-
-      <p class="exp-tier-note">Standard includes Photorealistic + 2 styles. Pro unlocks all 9.</p>
-      <div style="text-align:center;margin-top:28px">
-        <a href="https://onboarding.posst.app/" class="btn btn-primary" style="display:inline-flex">Start free &mdash; 30 days &rarr;</a>
-      </div>
-    </div>
-
-    <div id="exp-panel-reviews" class="exp-panel" style="display:none">
-      <div class="exp-reviews-grid">
-        <div class="exp-review-card fade-in">
-          <div class="exp-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="exp-review-text">&ldquo;Took my golden retriever Max in for a full groom and he came out looking amazing! The staff were so gentle with him and he wasn&rsquo;t stressed at all. Highly recommend!&rdquo;</p>
-          <div class="exp-review-reply">
-            <div class="exp-review-reply-badge">&#10024; AI reply by posst.app</div>
-            Thank you so much for the kind words! We&rsquo;re thrilled Max had a stress-free visit and left looking his best. He&rsquo;s welcome back anytime &mdash; see you both again soon!
-          </div>
-        </div>
-        <div class="exp-review-card fade-in">
-          <div class="exp-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="exp-review-text">&ldquo;Best grooming experience we&rsquo;ve ever had! They did exactly the cut we asked for and even trimmed his nails without any fuss. Our dog actually seemed happy to be there!&rdquo;</p>
-          <div class="exp-review-reply">
-            <div class="exp-review-reply-badge">&#10024; AI reply by posst.app</div>
-            This made our day! We love when dogs feel right at home with us. Thanks for trusting us with your pup&rsquo;s grooming &mdash; we can&rsquo;t wait to see him again next time!
-          </div>
-        </div>
-        <div class="exp-review-card fade-in">
-          <div class="exp-review-stars">&#9733;&#9733;&#9733;&#9733;<span style="color:var(--border)">&#9733;</span></div>
-          <p class="exp-review-text">&ldquo;Good service overall and my dog looked great afterwards. Only downside was we had to wait about 20 minutes past our appointment time. Would still come back.&rdquo;</p>
-          <div class="exp-review-reply">
-            <div class="exp-review-reply-badge">&#10024; AI reply by posst.app</div>
-            Thank you for the feedback &mdash; we&rsquo;re really glad your dog left looking great! We&rsquo;re sorry about the wait and are working on tightening up our scheduling so appointments run on time. We appreciate you sticking with us.
-          </div>
-        </div>
-        <div class="exp-review-card fade-in">
-          <div class="exp-review-stars">&#9733;<span style="color:var(--border)">&#9733;&#9733;&#9733;&#9733;</span></div>
-          <p class="exp-review-text">&ldquo;Disappointed with our last visit. The cut wasn&rsquo;t what we asked for and no one called to explain the delay in pickup. Expected better.&rdquo;</p>
-          <div class="exp-review-reply">
-            <div class="exp-review-reply-badge">&#10024; AI reply by posst.app</div>
-            We&rsquo;re really sorry to hear this &mdash; this isn&rsquo;t the experience we want for you or your dog. We&rsquo;d like to make it right. Please give us a call or drop by so we can fix the cut and address the pickup delay directly. Thank you for letting us know.
-          </div>
-        </div>
-      </div>
-      <p class="exp-tier-note">Every Google review gets a professional reply &mdash; automatically. <span class="exp-pro-badge">Pro</span></p>
     </div>
   </div>
 </section>
