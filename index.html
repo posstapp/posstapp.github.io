@@ -448,6 +448,32 @@ h2 em { font-style: italic; color: var(--blue); }
 .faq-group-label:first-child { margin-top: 0; }
 .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .65s ease, transform .65s ease; }
 .fade-in.visible { opacity: 1; transform: none; }
+
+/* ─── EXPERIENCE ZONE ─── */
+#experience { background: var(--white); border-top: 1px solid var(--border); padding: 96px 24px; }
+.exp-tabs { display: inline-flex; gap: 4px; background: var(--cream); border: 1px solid var(--border); border-radius: 12px; padding: 4px; margin: 32px 0 40px; }
+.exp-tab { font-family: inherit; font-size: 14px; font-weight: 600; color: var(--muted); background: none; border: none; border-radius: 9px; padding: 10px 20px; cursor: pointer; transition: background .15s, color .15s; }
+.exp-tab.active { background: var(--white); color: var(--ink); box-shadow: var(--shadow); }
+.exp-select-row { margin-bottom: 32px; }
+.exp-select-label { display: block; font-size: 13px; font-weight: 600; color: var(--ink2); margin-bottom: 8px; }
+.exp-select { width: 100%; max-width: 420px; padding: 13px 16px; border: 1.5px solid var(--border); border-radius: 10px; font-size: 15px; font-family: inherit; color: var(--ink); background: var(--white); cursor: pointer; }
+.exp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.exp-grid-item { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); background: var(--cream); aspect-ratio: 1; }
+.exp-grid-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.exp-style-label { position: absolute; left: 0; right: 0; bottom: 0; padding: 8px 10px; font-size: 11px; font-weight: 600; color: #fff; background: linear-gradient(to top, rgba(0,0,0,.55), transparent); }
+.exp-pro-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .04em; color: var(--blue); background: var(--blue-lt); border-radius: 999px; padding: 2px 8px; margin-left: 6px; vertical-align: middle; }
+.exp-grid-item .exp-pro-badge { position: absolute; top: 8px; right: 8px; background: rgba(255,255,255,.92); margin: 0; }
+.exp-cards-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 14px; }
+.exp-card-item { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); aspect-ratio: 1; }
+.exp-card-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.exp-tier-note { text-align: center; font-size: 13px; color: var(--muted); margin-top: 24px; }
+.exp-reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.exp-review-card { background: var(--cream); border: 1px solid var(--border); border-radius: 16px; padding: 22px; }
+.exp-review-stars { font-size: 15px; color: #F5A623; margin-bottom: 10px; letter-spacing: 2px; }
+.exp-review-text { font-size: 14px; color: var(--ink2); line-height: 1.6; margin-bottom: 16px; }
+.exp-review-reply { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; font-size: 13px; color: var(--muted); line-height: 1.6; }
+.exp-review-reply-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 700; color: var(--blue); background: var(--blue-lt); border-radius: 999px; padding: 3px 9px; margin-bottom: 8px; }
+
 @media (max-width: 900px) {
   .nav { padding: 0 20px; }
   .hero { padding: 100px 24px 70px; }
@@ -466,6 +492,9 @@ h2 em { font-style: italic; color: var(--blue); }
   .pricing-grid { grid-template-columns: 1fr; max-width: 380px; margin: 56px auto 0; }
   .stats-grid { grid-template-columns: repeat(2,1fr); }
   footer { flex-direction: column; gap: 16px; text-align: center; }
+  .exp-grid { grid-template-columns: repeat(2, 1fr); }
+  .exp-cards-row { grid-template-columns: repeat(2, 1fr); }
+  .exp-reviews-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
   .nav-links li:nth-child(1), .nav-links li:nth-child(2), .nav-links li:nth-child(3), .nav-links li:nth-child(4) { display: none; }
@@ -935,6 +964,72 @@ h2 em { font-style: italic; color: var(--blue); }
         <div class="trust-card"><div class="trust-icon">&#128205;</div><div><h3>Hyper-local content, built in</h3><p>Every caption is written with your suburb, your service, your tone &mdash; on every plan, automatically.</p></div></div>
         <div class="trust-card"><div class="trust-icon">&#128682;</div><div><h3>Cancel anytime &mdash; nothing disappears</h3><p>Your accounts stay yours forever. Cancel and everything you&apos;ve built remains intact.</p></div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">See it for yourself</div>
+    <h2>See what posst.app <em>creates.</em></h2>
+    <p class="section-desc">Browse real examples by industry &mdash; the exact styles, cards and review replies your business would get.</p>
+
+    <div class="exp-tabs fade-in">
+      <button class="exp-tab active" data-tab="gallery" onclick="expSwitchTab('gallery')" type="button">Style gallery</button>
+      <button class="exp-tab" data-tab="reviews" onclick="expSwitchTab('reviews')" type="button">Review replies</button>
+    </div>
+
+    <div id="exp-panel-gallery" class="exp-panel">
+      <div class="exp-select-row fade-in">
+        <label class="exp-select-label" for="exp-category">Choose your industry</label>
+        <select id="exp-category" class="exp-select" onchange="expRenderGallery(this.value)"></select>
+      </div>
+
+      <div class="exp-grid fade-in" id="exp-grid"></div>
+      <div class="exp-cards-row fade-in" id="exp-cards"></div>
+
+      <p class="exp-tier-note">Standard includes Photorealistic + 2 styles. Pro unlocks all 9.</p>
+      <div style="text-align:center;margin-top:28px">
+        <a href="https://onboarding.posst.app/" class="btn btn-primary" style="display:inline-flex">Start free &mdash; 30 days &rarr;</a>
+      </div>
+    </div>
+
+    <div id="exp-panel-reviews" class="exp-panel" style="display:none">
+      <div class="exp-reviews-grid">
+        <div class="exp-review-card fade-in">
+          <div class="exp-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="exp-review-text">&ldquo;Took my golden retriever Max in for a full groom and he came out looking amazing! The staff were so gentle with him and he wasn&rsquo;t stressed at all. Highly recommend!&rdquo;</p>
+          <div class="exp-review-reply">
+            <div class="exp-review-reply-badge">&#10024; AI reply by posst.app</div>
+            Thank you so much for the kind words! We&rsquo;re thrilled Max had a stress-free visit and left looking his best. He&rsquo;s welcome back anytime &mdash; see you both again soon!
+          </div>
+        </div>
+        <div class="exp-review-card fade-in">
+          <div class="exp-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="exp-review-text">&ldquo;Best grooming experience we&rsquo;ve ever had! They did exactly the cut we asked for and even trimmed his nails without any fuss. Our dog actually seemed happy to be there!&rdquo;</p>
+          <div class="exp-review-reply">
+            <div class="exp-review-reply-badge">&#10024; AI reply by posst.app</div>
+            This made our day! We love when dogs feel right at home with us. Thanks for trusting us with your pup&rsquo;s grooming &mdash; we can&rsquo;t wait to see him again next time!
+          </div>
+        </div>
+        <div class="exp-review-card fade-in">
+          <div class="exp-review-stars">&#9733;&#9733;&#9733;&#9733;<span style="color:var(--border)">&#9733;</span></div>
+          <p class="exp-review-text">&ldquo;Good service overall and my dog looked great afterwards. Only downside was we had to wait about 20 minutes past our appointment time. Would still come back.&rdquo;</p>
+          <div class="exp-review-reply">
+            <div class="exp-review-reply-badge">&#10024; AI reply by posst.app</div>
+            Thank you for the feedback &mdash; we&rsquo;re really glad your dog left looking great! We&rsquo;re sorry about the wait and are working on tightening up our scheduling so appointments run on time. We appreciate you sticking with us.
+          </div>
+        </div>
+        <div class="exp-review-card fade-in">
+          <div class="exp-review-stars">&#9733;<span style="color:var(--border)">&#9733;&#9733;&#9733;&#9733;</span></div>
+          <p class="exp-review-text">&ldquo;Disappointed with our last visit. The cut wasn&rsquo;t what we asked for and no one called to explain the delay in pickup. Expected better.&rdquo;</p>
+          <div class="exp-review-reply">
+            <div class="exp-review-reply-badge">&#10024; AI reply by posst.app</div>
+            We&rsquo;re really sorry to hear this &mdash; this isn&rsquo;t the experience we want for you or your dog. We&rsquo;d like to make it right. Please give us a call or drop by so we can fix the cut and address the pickup delay directly. Thank you for letting us know.
+          </div>
+        </div>
+      </div>
+      <p class="exp-tier-note">Every Google review gets a professional reply &mdash; automatically. <span class="exp-pro-badge">Pro</span></p>
     </div>
   </div>
 </section>
@@ -1477,6 +1572,102 @@ function toggleFaq(btn) {
   const isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
   if (!isOpen) item.classList.add('open');
+}
+
+/* ─── EXPERIENCE ZONE ─── */
+const EXP_R2 = 'https://pub-f5f1d08da66048808d14f48cb78ebb36.r2.dev/style_previews_v2';
+const EXP_STYLES = [
+  { slug: 'photorealistic',     label: 'Photorealistic',     tier: 'all' },
+  { slug: 'soft_watercolour',   label: 'Soft Watercolour',   tier: 'all' },
+  { slug: 'studio_ghibli',      label: 'Studio Ghibli',      tier: 'pro' },
+  { slug: 'minimalist_line_art',label: 'Minimalist Line Art',tier: 'all' },
+  { slug: 'flat_illustration',  label: 'Flat Illustration',  tier: 'all' },
+  { slug: 'oil_painting',       label: 'Oil Painting',       tier: 'pro' },
+  { slug: 'pop_art',            label: 'Pop Art',            tier: 'pro' },
+  { slug: 'cinematic_noir',     label: 'Cinematic Noir',     tier: 'pro' },
+  { slug: 'vintage_film',       label: 'Vintage Film',       tier: 'pro' },
+];
+const EXP_CARD_TYPES = [
+  { slug: 'quote_card',   label: 'Quote' },
+  { slug: 'tip_graphic',  label: 'Tip' },
+  { slug: 'stat_callout', label: 'Stat' },
+  { slug: 'cta_card',     label: 'Call to action' },
+];
+const EXP_GROUPS = [
+  { slug: 'fitness_leisure',          label: 'Fitness & Leisure' },
+  { slug: 'pet_services',             label: 'Pet Services' },
+  { slug: 'automotive',               label: 'Automotive' },
+  { slug: 'education_childcare',      label: 'Education & Childcare' },
+  { slug: 'accommodation_tourism',    label: 'Accommodation & Tourism' },
+  { slug: 'online_ecommerce',         label: 'Online & eCommerce' },
+  { slug: 'events_entertainment',     label: 'Events & Entertainment' },
+  { slug: 'health_wellness',          label: 'Health & Wellness' },
+  { slug: 'spiritual_alternative',    label: 'Spiritual & Alternative Wellness' },
+  { slug: 'kids_family',              label: 'Kids & Family' },
+  { slug: 'food_drink_production',    label: 'Food & Drink Production' },
+  { slug: 'trade_industrial',         label: 'Trade & Industrial' },
+  { slug: 'food_bakery_sweets',       label: 'Bakery & Sweets',          parent: 'Food & Hospitality' },
+  { slug: 'food_dining',              label: 'Dining & Cafes',           parent: 'Food & Hospitality' },
+  { slug: 'food_street_casual',       label: 'Street Food & Takeaway',   parent: 'Food & Hospitality' },
+  { slug: 'food_specialty',           label: 'Specialty Food & Catering',parent: 'Food & Hospitality' },
+  { slug: 'beauty_salon',             label: 'Salon & Beauty',           parent: 'Beauty & Health' },
+  { slug: 'beauty_clinical',          label: 'Clinical & Medical',       parent: 'Beauty & Health' },
+  { slug: 'beauty_therapy',           label: 'Therapy & Allied Health',  parent: 'Beauty & Health' },
+  { slug: 'retail_fashion',           label: 'Fashion & Jewellery',      parent: 'Retail' },
+  { slug: 'retail_specialty',         label: 'Specialty Shops',          parent: 'Retail' },
+  { slug: 'retail_tech',              label: 'Tech & Electronics',       parent: 'Retail' },
+  { slug: 'retail_general',           label: 'General Retail',           parent: 'Retail' },
+  { slug: 'home_trades',              label: 'Trades',                   parent: 'Home & Garden' },
+  { slug: 'home_services',            label: 'Home Services',            parent: 'Home & Garden' },
+  { slug: 'home_improvement',         label: 'Home Improvement',         parent: 'Home & Garden' },
+  { slug: 'professional_corporate',   label: 'Corporate & Professional', parent: 'Professional Services' },
+  { slug: 'professional_creative',    label: 'Creative Services',        parent: 'Professional Services' },
+  { slug: 'professional_specialist',  label: 'Specialist Services',      parent: 'Professional Services' },
+];
+
+function expBuildSelect() {
+  const sel = document.getElementById('exp-category');
+  if (!sel) return;
+  const standalone = EXP_GROUPS.filter(g => !g.parent);
+  const parents = {};
+  EXP_GROUPS.filter(g => g.parent).forEach(g => { (parents[g.parent] = parents[g.parent] || []).push(g); });
+  let html = standalone.map(g => `<option value="${g.slug}">${g.label}</option>`).join('');
+  Object.keys(parents).forEach(p => {
+    html += `<optgroup label="${p}">` + parents[p].map(g => `<option value="${g.slug}">${g.label}</option>`).join('') + `</optgroup>`;
+  });
+  sel.innerHTML = html;
+}
+
+function expRenderGallery(slug) {
+  const group = EXP_GROUPS.find(g => g.slug === slug);
+  if (!group) return;
+  const grid = document.getElementById('exp-grid');
+  const cards = document.getElementById('exp-cards');
+  if (!grid || !cards) return;
+  grid.innerHTML = EXP_STYLES.map(s => `
+    <div class="exp-grid-item">
+      <img src="${EXP_R2}/${slug}/${s.slug}.jpg" alt="${group.label} — ${s.label}" loading="lazy">
+      <div class="exp-style-label">${s.label}</div>
+      ${s.tier === 'pro' ? '<span class="exp-pro-badge">Pro</span>' : ''}
+    </div>`).join('');
+  cards.innerHTML = EXP_CARD_TYPES.map(c => `
+    <div class="exp-card-item">
+      <img src="${EXP_R2}/${slug}/card_${c.slug}.jpg" alt="${group.label} — ${c.label} card" loading="lazy">
+    </div>`).join('');
+}
+
+function expSwitchTab(tab) {
+  document.querySelectorAll('.exp-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+  const galleryPanel = document.getElementById('exp-panel-gallery');
+  const reviewsPanel = document.getElementById('exp-panel-reviews');
+  if (galleryPanel) galleryPanel.style.display = tab === 'gallery' ? '' : 'none';
+  if (reviewsPanel) reviewsPanel.style.display = tab === 'reviews' ? '' : 'none';
+}
+
+expBuildSelect();
+if (document.getElementById('exp-category')) {
+  document.getElementById('exp-category').value = EXP_GROUPS[0].slug;
+  expRenderGallery(EXP_GROUPS[0].slug);
 }
 </script>
 <style>
