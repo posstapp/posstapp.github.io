@@ -72,6 +72,16 @@ img { max-width: 100%; display: block; }
 .nav-links a { font-size: 14px; font-weight: 500; color: var(--muted); transition: color .2s; }
 .nav-account-btn { background: var(--blue) !important; color: white !important; padding: 8px 18px !important; border-radius: 8px !important; font-weight: 600 !important; }
 .nav-links a:hover { color: var(--ink); }
+.nav-exp-btn {
+  background: var(--blue) !important; color: #fff !important;
+  padding: 7px 16px !important; border-radius: 20px !important; font-weight: 600 !important;
+  animation: navExpGlow 2.4s ease-in-out infinite;
+}
+.nav-exp-btn:hover { color: #fff !important; opacity: .9; }
+@keyframes navExpGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(30,64,175,.45); }
+  50% { box-shadow: 0 0 16px 5px rgba(30,64,175,.45); }
+}
 .nav-cta {
   background: var(--ink); color: var(--white) !important;
   padding: 9px 20px; border-radius: 8px; font-size: 14px !important;
@@ -772,7 +782,7 @@ h2 em { font-style: italic; color: var(--blue); }
     <img src="posst_logo_final.png" alt="posst.app" onerror="this.src='posst_logo_dark.png'">
   </a>
   <ul class="nav-links">
-    <li><a href="#experience">See examples</a></li>
+    <li><a href="#experience" class="nav-exp-btn">See examples</a></li>
     <li><a href="#agents">What we do</a></li>
     <li><a href="#how">How it works</a></li>
     <li><a href="#pricing">Pricing</a></li>
